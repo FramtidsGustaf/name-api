@@ -14,23 +14,22 @@ function fi_las($name, $stop)
 {
   $search = ['å', 'ä', 'ö', 'Å', 'Ä', 'Ö', ' '];
   $replace = ['a', 'a', 'o', 'A', 'A', 'O', ''];
-  return substr(str_replace($search, $replace, $name), 0, $stop);
+  return strtolower(substr(str_replace($search, $replace, $name), 0, $stop));
 }
 
 for ($i = 0; $i < 10; $i++) {
-  $random = rand(0, 1);
-  $firstName = $random ? $female[rand(0, 9)] : $male[rand(0, 9)];
+  $gender = rand(0, 1);
+  $firstName = $gender ? $female[rand(0, 9)] : $male[rand(0, 9)];
   $lastName = $lastNames[rand(0, 9)];
   $fi = fi_las($firstName, 2);
   $las = fi_las($lastName, 3);
-  $email = strtolower($fi . $las) . '@example.com';
 
   $names[] = array(
     "firstname" => $firstName,
     "lastname" => $lastName,
-    "gender" => $random ? "female" : "male",
-    "age" => rand(1, 101),
-    "email" => $email
+    "gender" => $gender ? "female" : "male",
+    "age" => rand(1, 100),
+    "email" => $fi . $las . '@example.com'
   );
 }
 
