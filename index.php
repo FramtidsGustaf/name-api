@@ -12,8 +12,7 @@ $lastNames = ["Johnsson", "Hedlund", "Al Hakim", "Gedda", "Basele", "Carlson", "
 
 for ($i = 0; $i < 10; $i++) {
   $random = rand(0, 1);
-  $firstNames = $random ? $female : $male;
-  $firstName = $firstNames[rand(0, 9)];
+  $firstName = $random ? $female[rand(0, 9)] : $male[rand(0, 9)];
   $lastName = $lastNames[rand(0, 9)];
   $search = 'åäöÅÄÖ';
   $replace = 'aaoAAO';
