@@ -11,7 +11,7 @@ $male = ["Robin", "Mahmud", "Kevin", "Sebastian", "Gustaf", "Björn", "Erik", "D
 $lastNames = ["Johnsson", "Hedlund", "Al Hakim", "Gedda", "Basele", "Carlson", "Bernadotte", "Wonder", "Richie", "Olsson"];
 $limit = isset($_GET['limit']) ? htmlspecialchars($_GET['limit']) : 10;
 
-if (!is_numeric($limit)) {
+if (!is_numeric($limit) || $limit < 1) {
   http_response_code(400);
   die('What are you trying to accomplish?');
 }
