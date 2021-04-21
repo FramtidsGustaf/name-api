@@ -12,8 +12,8 @@ $lastNames = ["Johnsson", "Hedlund", "Al Hakim", "Gedda", "Basele", "Carlson", "
 
 function fi_las($name, $stop)
 {
-  $search = array('å', 'ä', 'ö', 'Å', 'Ä', 'Ö', ' ');
-  $replace = array('a', 'a', 'o', 'A', 'A', 'O', '');
+  $search = ['å', 'ä', 'ö', 'Å', 'Ä', 'Ö', ' '];
+  $replace = ['a', 'a', 'o', 'A', 'A', 'O', ''];
   return substr(str_replace($search, $replace, $name), 0, $stop);
 }
 
