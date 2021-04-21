@@ -25,7 +25,7 @@ for ($i = 0; $i < 10; $i++) {
     "firstname" => $firstName,
     "lastname" => $lastName,
     "gender" => $random ? "female" : "male",
-    "age" => rand(1, 100),
+    "age" => rand(1, 101),
     "email" => $email
   );
 }
