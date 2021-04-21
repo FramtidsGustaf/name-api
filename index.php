@@ -17,8 +17,6 @@ for ($i = 0; $i < 10; $i++) {
   $lastName = $lastNames[rand(0, 9)];
   $search = 'åäöÅÄÖ';
   $replace = 'aaoAAO';
-  $whitespace = " ";
-  $noSpace = "";
   $email = strtolower(substr(strtr($firstName, $search, $replace), 0, 2) . substr(strtr(str_replace(' ', '', $lastName), $search, $replace), 0, 3)) . '@example.com';
 
   $names[] = array(
